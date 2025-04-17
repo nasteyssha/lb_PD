@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html land="ru">
+<head>
+	<title>Книжковий магазин</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet"  href="css/style.css">
+	<link rel="stylesheet"  href="css/footer.css">
+	<link rel="script"  href="js/sc.js">
+	<style>
+		body {
+    background-image: url("img/1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+    body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: url("img/1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(5px);
+    }
+	</style>
+
+</head>
+<body>
+	<header>
+		<h1>Книжковий магазин</h1>
+		<nav>
+			<ul>
+				<li><a href="index.html" class="button"> Головна</a></li>
+				<li><a href="books.html" class="button"> Книги</a></li>
+				<li><a href="about.html" class="button"> Про нас</a></li>
+				<li><a href="contact.html" class="button"> Контакти</a></li>
+				<li><a href="eSub.html" class="button"> e-Підписка</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+
+		<section id="intro">
+			<h2>Ласкаво просимо до книжкового магазину</h2>
+				<p>Ми пропонуємо великий вибір книг для всіх вікових категорій.
+				   Наші книги є високої якості та доступні за вигідними цінами.
+				</p>
+			<a href="books.html" class="button">Переглянути книги</a>
+		</section>
+<h2>Найпопулярніші книги</h2>
+		<section id="books">
+
+			<div class="book">																	<!-- При нажатии на картинку переходить на страницу книги-->
+				<a href="book_1.html"><img src="img/book1.jpg"  alt="Книга 1" class="scale"></a>
+				<h3>І зійде крига.</h3>
+				<p>Х. Ґрейс</p>
+				<p class="price">Ціна: $19.99</p>
+				<a href="book_1.html" class="button">Купити</a>
+			</div>
+			<div class="book">
+				<a href="book_2.html"><img src="img/book2.jpg"  alt="Книга 2" class="scale"></a>
+				<h3>Turquoise dreams</h3>
+				<p>Welson Yole</p>
+				<p class="price">Ціна: $24.99</p>
+				<a href="buy.html" class="button">Купити</a>
+			</div>
+			<div class="book">
+				<a href="book_3.html"><img src="img/book3.jpg"  alt="Книга 3" class="scale"></a>
+				<h3>The art of arts</h3>
+				<p>Christine Dolan</p>
+				<p class="price">Ціна: $14.99</p>
+				<a href="buy.html" class="button">Купити</a>
+			</div>			
+		</section>
+
+	</main>
+
+
+	<footer>
+  <div class="footer-container">
+    <div class="footer-row">
+      <div class="footer-col">
+        <h3>Контакты</h3>
+        <li><strong>Адреса:</strong> вул. Пушкіна, дом Колотушкіна 10 </li>
+        <li><strong>Телефон:</strong> 123-456-7890</li>
+        <li><strong>Email:</strong> info@bookstore.com</li>
+      </div>
+      <div class="footer-col">
+        <h3>Про нас</h3>
+        <p>Зв'яжіться з нами, щоб дізнатись більше про наші послуги та продукти:</p>
+      </div>
+      <div class="footer-col">
+        <h3>Корисні посилання</h3>
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="about.html">Послуги</a></li>
+          <li><a href="books.html">Бібліотека</a></li>
+          <li><a href="contact.html">Контакты</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>©2025 nastyabook.com Всі права захищені</p>
+  </div>
+</footer>
+
+</body>
+</html>

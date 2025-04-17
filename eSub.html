@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html land="ru">
+<head>
+	<title>Е-Підписка</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet"  href="css/style.css">
+	<link rel="stylesheet"  href="css/footer.css">
+  <link rel="script" href="js/sc.js">
+  <style>
+
+		body {
+    background-image: url("img/1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+    body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: url("img/1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(5px);
+    }
+
+    main {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 50px;
+          display: flex;
+          justify-content: space-between;
+        }
+
+  </style>
+	
+</head>
+<body>
+	<header>
+		<h1>Е-Підписка</h1>
+		<nav>
+			<ul>
+				<li><a href="index.html" class="button"> Головна</a></li>
+				<li><a href="books.html" class="button"> Книги</a></li>
+				<li><a href="about.html" class="button"> Про нас</a></li>
+				<li><a href="contact.html" class="button"> Контакти</a></li>
+				<li><a href="eSub.html" class="button"> e-Підписка</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+
+	<form action="/submit-form" method="post">
+      <label for="name">Имя:</label>
+      <input type="text" id="name" name="name" required>
+      <span class="error" id="name-error"></span>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <span class="error" id="email-error"></span>
+
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" required>
+      <span class="error" id="password-error"></span>
+
+      <label for="message">Сообщение:</label>
+      <textarea id="message" name="message"></textarea>
+
+      <input type="submit" value="Отправить">
+    </form>
+
+    <div id="text-container">
+      <p>1. Введите имя, оно будет вказано при реестрации.<br> 
+         2. Введите Email типа xxxxxx@xxx.xxx, он нужен для отправки подтверждения и реестрации на сайте.<br> 
+         3. Придумайте пароль.<br>
+         4. Если что то хотите добавить или найшли баг на сайте, напишите в окне Сообщение. </p>
+    </div>
+
+  </main>
+
+
+
+
+
+	<footer>
+  <div class="footer-container">
+    <div class="footer-row">
+      <div class="footer-col">
+        <h3>Контакты</h3>
+        <li><strong>Адреса:</strong> вул. Пушкіна, дом Колотушкіна 10</li>
+        <li><strong>Телефон:</strong> 123-456-7890</li>
+        <li><strong>Email:</strong> info@bookstore.com</li>
+      </div>
+      <div class="footer-col">
+        <h3>Про нас</h3>
+        <p>Зв'яжіться з нами, щоб дізнатись більше про наші послуги та продукти:</p>
+      </div>
+      <div class="footer-col">
+        <h3>Корисні посилання</h3>
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="about.html">Послуги</a></li>
+          <li><a href="books.html">Бібліотека</a></li>
+          <li><a href="contact.html">Контакты</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>©2025 nastyabook.com Всі права захищені</p>
+  </div>
+</footer>
+
+</body>
+</html>

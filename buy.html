@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Оплата за книгу</title>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    
+		body {
+    background-image: url("img/1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+    body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: url("img/1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(5px);
+    }
+	
+      .container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+  </style>
+
+
+
+  <script>
+    function validateForm() {
+  var bookName = document.getElementById("book_name").value;
+  var validBookNames = [
+    "Shapes and beats",
+    "Turquoise dreams",
+    "The art of arts",
+    "The colors of rainbow & not only",
+    "Wonders of modern art",
+    "World of the unspoken",
+    "The dance of shades",
+    "Shape & color: combined",
+    "Why pink"
+  ];
+  
+  var cardNumber = document.getElementById("card_number").value;
+  var cvv = document.getElementById("cvv").value;
+  var nameOnCard = document.getElementById("name_on_card").value;
+  var expiryDate = document.getElementById("expiry_date").value;
+  
+  var isValid = true;
+
+  // Проверка названия книги
+  if (!validBookNames.includes(bookName)) {
+    document.getElementById("error_book_name").innerHTML = "Пожалуйста, введите допустимое название книги.";
+    isValid = false;
+  } else {
+    document.getElementById("error_book_name").innerHTML = "";
+  }
+
+  // Проверка номера карты
+  if (!isValidCardNumber(cardNumber)) {
+    document.getElementById("error_card_number").innerHTML = "Пожалуйста, введите действительный номер карты.";
+    isValid = false;
+  } else {
+    document.getElementById("error_card_number").innerHTML = "";
+  }
+
+  // Проверка CVV
+  if (!isValidCVV(cvv)) {
+    document.getElementById("error_cvv").innerHTML = "Пожалуйста, введите действительный CVV.";
+    isValid = false;
+  } else {
+    document.getElementById("error_cvv").innerHTML = "";
+  }
+
+  // Проверка имени на карте
+  if (!isValidNameOnCard(nameOnCard)) {
+    document.getElementById("error_name_on_card").innerHTML = "Пожалуйста, введите допустимое имя на карте.";
+    isValid = false;
+  } else {
+    document.getElementById("error_name_on_card").innerHTML = "";
+  }
+
+  // Проверка срока действия карты
+  if (!isValidExpiryDate(expiryDate)) {
+    document.getElementById("error_expiry_date").innerHTML = "Пожалуйста, введите действительный срок действия карты в формате MM/ГГ.";
+    isValid = false;
+  } else {
+    document.getElementById("error_expiry_date").innerHTML = "";
+  }
+
+  return isValid;
+}
+
+function isValidCardNumber(cardNumber) {
+  // Удаление пробелов из номера карты
+  var sanitizedCardNumber = cardNumber.replace(/\s/g, "");
+
+  // Проверка, что номер карты состоит только из цифр
+  if (!/^\d+$/.test(sanitizedCardNumber)) {
+    return false;
+  }
+
+  // Проверка, что номер карты имеет длину от 12 до 19 символов
+  if (sanitizedCardNumber.length < 12 || sanitizedCardNumber.length > 19) {
+    return false;
+  }
+
+  // Проверка по алгоритму Луна
+  var sum = 0;
+  var double = false;
+  for (var i = sanitizedCardNumber.length - 1; i >= 0; i--) {
+    var digit = parseInt(sanitizedCardNumber.charAt(i), 10);
+    if (double) {
+      digit *= 2;
+      if (digit > 9) {
+        digit -= 9;
+      }
+    }
+    sum += digit;
+    double = !double;
+  }
+
+  return sum % 10 === 0;
+}
+
+
+
+function isValidCVV(cvv) {
+  // Проверка, что CVV состоит только из цифр
+  if (!/^\d+$/.test(cvv)) {
+    return false;
+  }
+
+  // Проверка длины CVV в зависимости от типа карты
+  if (cvv.length !== 3) {
+    return false;
+  }
+
+  return true;
+}
+
+
+function isValidNameOnCard(nameOnCard) {
+  // Проверка, что имя на карте состоит только из букв и пробелов
+  if (!/^[A-Za-z\s]+$/.test(nameOnCard)) {
+    return false;
+  }
+
+  // Проверка, что длина имени на карте не превышает максимально допустимую длину
+  if (nameOnCard.length > 50) {
+    return false;
+  }
+
+  return true;
+}
+
+
+function isValidExpiryDate(expiryDate) {
+  var pattern = /^(0[1-9]|1[0-2])\/\d{2}$/; // Регулярное выражение для проверки формата MM/ГГ
+  return pattern.test(expiryDate);
+}
+
+
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Оплата за книгу</h1>
+    <form action="process_payment.php" method="POST" onsubmit="return validateForm()">
+      <div class="form-group">
+        <label for="book_name">Название книги:</label>
+        <input type="text" id="book_name" name="book_name" required>
+        <span id="error_book_name" class="error"></span>
+      </div>
+      <div class="form-group">
+        <label for="card_number">Номер карты:</label>
+        <input type="text" id="card_number" name="card_number" required>
+        <span id="error_card_number" class="error"></span>
+      </div>
+      <div class="form-group">
+        <label for="expiry_date">Срок действия:</label>
+        <input type="text" id="expiry_date" name="expiry_date" placeholder="MM/ГГ" required>
+        <span id="error_expiry_date" class="error"></span>
+      </div>
+      <div class="form-group">
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" required>
+        <span id="error_cvv" class="error"></span>
+      </div>
+      <div class="form-group">
+        <label for="name_on_card">Имя на карте:</label>
+        <input type="text" id="name_on_card" name="name_on_card" required>
+        <span id="error_name_on_card" class="error"></span>
+      </div>
+      <input type="submit" value="Оплатить" class="btn">
+    </form>
+  </div>
+</body>
+</html>

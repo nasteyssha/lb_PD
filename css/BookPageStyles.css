@@ -1,0 +1,171 @@
+/* Налаштування контейнера з прокруткою */
+.scroll-container {
+  overflow-y: scroll;
+  height: 500px; /* Задайте фіксовану висоту контейнера */
+}
+
+/* Горизонтальна лінія */
+.horizontal-line {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background-color: black; /* Колір лінії */
+}
+
+.horizontal-line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top: 1px solid black; /* Параметри лінії */
+}
+
+/* Ефект масштабування */
+.scale {
+  transition: 0.5s; /* Час ефекту */
+}
+
+.scale:hover {
+  transform: scale(1.35); /* Збільшуємо масштаб */
+}
+
+/* Стилі для контейнера таблиці */
+.table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Стилі для кнопки таблиці */
+.table-button {
+  width: 220px;
+  height: 40px;
+  margin-bottom: 10px;
+  background-color: #4CAF50;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  text-decoration: none; /* Додано */
+  color: #fff; /* Додано */
+}
+
+.table-button:hover {
+  background-color: lightblue;
+}
+
+/* Загальні стилі */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  font-size: 18px;
+}
+
+main {
+  padding: 20px;
+  display: flex;
+}
+
+/* Стилі для кнопок */
+.button-color {
+  background-color: #4CAF50;
+  color: #4CAF50;
+}
+
+.clicked {
+  background-color: red !important;
+}
+
+.button {
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Стилі для лівого сайдбара */
+.sidebar-left {
+  flex: 1;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+.sidebar-left h3 {
+  font-size: 18px;
+}
+
+/* Стилі для основного вмісту */
+.book-details {
+  flex: 3;
+  text-align: center;
+}
+
+.book-details h1 {
+  font-size: 24px;
+}
+
+.book-details img {
+  max-width: 300px;
+  margin-bottom: 10px;
+}
+
+.additional-info {
+  margin-top: 20px;
+}
+
+.additional-info .info-content {
+  display: none;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+.additional-info .info-content h2 {
+  font-size: 20px;
+  margin-top: 0;
+}
+
+.additional-info .info-content.active {
+  display: block;
+}
+
+/* Стилі для правого сайдбара */
+.sidebar-right {
+  flex: 2;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+.sidebar-right h3 {
+  font-size: 18px;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World of the unspoken</title>                                         <!-- Заголовок страницы -->
+  <link rel="stylesheet" type="text/css" href="css/BookPageStyles.css">   <!-- Подключение CSS стилей -->
+  <link rel="stylesheet"  href="css/footer.css">
+  <style>
+		body {
+    background-image: url("img/1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+    body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: url("img/1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(5px);
+    }
+	</style>
+</head>
+
+
+  <header>
+    <h1>World of the unspoken</h1>                                             <!-- Заголовок страницы -->
+    <nav>
+      <ul>
+        <li><a href="index.html"> Головна</a></li>
+        <li><a href="books.html"> Книги</a></li>
+        <li><a href="about.html"> Про нас</a></li>
+        <li><a href="contact.html"> Контакти</a></li>
+        <li><a href="eSub.html"> e-Підписка</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main>
+    <div class="sidebar-left">
+      <h2>Каталог</h2>                                                     <!-- Заголовок секции -->
+      <div class="table-container">
+        <a href="#" class="table-button">Новинки</a>                          <!-- Ссылка на новинки -->
+        <a href="#" class="table-button">Популярні</a>                        <!-- Ссылка на популярные книги -->
+        <a href="#" class="table-button">Аудіокниги</a>                       <!-- Ссылка на аудиокниги -->
+        <a href="#" class="table-button">Що почитати</a>                      <!-- Ссылка на рекомендации -->
+        <a href="#" class="table-button">Підбірки</a>                         <!-- Ссылка на подборки книг -->
+        <a href="#" class="table-button">Безкоштовно</a>                      <!-- Ссылка на бесплатные книги -->
+      </div>
+    </div>
+    <section class="book-details">
+      <h1>World of the unspoken</h1>                                             <!-- Заголовок книги -->
+      <img src="img/book6.jpg" alt="World of the unspoken" class="scale">        <!-- Изображение книги -->
+      <p>   </p>                                                            <!-- Пустой параграф -->
+      
+      <button class="button" id="buy-now" onclick="changeColor4()">Купити зараз</button>   <!-- Кнопка покупки -->
+      
+        
+    </section>
+
+    <div class="sidebar-right">
+      <h2>Інформація</h2>                                                  <!-- Заголовок секции -->
+      <div class="additional-info">
+        
+        <button class="button" id="description-btn" onclick="changeColor1()">Опис</button>                <!-- Кнопка для отображения описания -->
+        <button class="button" id="characteristics-btn" onclick="changeColor2()">Характеристика</button>   <!-- Кнопка для отображения характеристик -->
+        <button class="button" id="reviews-btn" onclick="changeColor3()">Відгуки</button>                  <!-- Кнопка для отображения отзывов -->
+
+        <div class="scroll-container">
+          <div id="description" class="info-content">
+            <h2>Опис про книгу</h2>                                             <!-- Заголовок описания -->
+            <p>"Вершники безкраю" - захоплива пригодницька
+              книга, наповнена епічними битвами, небезпекою 
+              та незабутніми героями. ...</p>                                 <!-- Описание книги -->
+          </div>
+
+          <div id="characteristics" class="info-content">
+            <h2>Характеристика книги</h2>                                      <!-- Заголовок характеристик -->
+            <p>Тут можна розгорнуто описати основні
+               особливості книги, її стиль, жанр,
+               тематику, атмосферу, мету або
+               повідомлення, яке автор хотів
+               передати читачеві. ...</p>                                      <!-- Характеристики книги -->
+          </div>
+      
+          <div id="reviews" class="info-content">
+            <h2>Відгуки про книгу</h2>                                          <!-- Заголовок отзывов -->
+            <div class="horizontal-line"></div>
+            <p><strong>Valentyn</strong>, 25.05.2023</p>
+            <p>Четка, можно почитать.</p>                                      <!-- Отзыв 1 -->
+            <div class="horizontal-line"></div>
+            <p><strong>Сергей</strong>, 27.07.2023</p>
+            <p>ну такое</p>                                                    <!-- Отзыв 2 -->
+            <div class="horizontal-line"></div>
+            <p><strong>Маша</strong>, 03.08.2023</p>
+            <p>Постарайтесь понять...</p>                                      <!-- Отзыв 3 -->
+            <div class="horizontal-line"></div>
+            <p><strong>Лунтик</strong>, 05.09.2023</p>
+            <p>аххахахахах</p>                                                  <!-- Отзыв 4 -->
+            <div class="horizontal-line"></div>
+            <p><strong>Дима</strong>, 07.09.2023</p>
+            <p>Стоит своих денег.</p>                                           <!-- Отзыв 5 -->
+            <div class="horizontal-line"></div>
+            <p><strong>Аня</strong>, 08.09.2023</p>
+            <p>Почему, зачем, куда...</p>                                       <!-- Отзыв 6 -->
+            <div class="horizontal-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-row">
+        <div class="footer-col">
+          <h3>Контакти</h3>
+          <li><strong>Адреса:</strong> вул. Пушкіна, дом Колотушкіна 10</li>
+          <li><strong>Телефон:</strong> 123-456-7890</li>
+          <li><strong>Email:</strong> info@bookstore.com</li>
+        </div>
+        <div class="footer-col">
+          <h3>Про нас</h3>
+          <p>Зв'яжіться з нами, щоб дізнатись більше про наші послуги та продукти:</p>
+        </div>
+        <div class="footer-col">
+          <h3>Корисні посилання</h3>
+          <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="about.html">Послуги</a></li>
+            <li><a href="books.html">Бібліотека</a></li>
+            <li><a href="contact.html">Контакти</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>©2025 nastyabook.com Всі права захищені</p>
+    </div>
+  </footer>
+  
+  <script src="js/BookPageScripts.js"></script>                                  <!-- Подключение скриптового файла -->
+</body>
+</html>
