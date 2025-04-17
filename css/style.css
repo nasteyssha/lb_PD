@@ -1,4 +1,30 @@
-  /* Стили для контейнера текста */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+}
+
+.logo-container img {
+  height: 50px;
+  width: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.logo-container img:hover {
+  transform: scale(1.05);
+}
+
+.logo-container h1 {
+  font-size: 32px;
+  margin: 0;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Стили для контейнера текста */
 #text-container {
 	flex-basis: 35%; /* Ширина контейнера равна 35% от родительского элемента */
 	text-align: left; /* Выравнивание текста по левому краю */
