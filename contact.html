@@ -28,12 +28,10 @@
       filter: blur(5px);
     }
 
+    /* Header (шапка) */
     header {
-      background-color: #f0f0f0;
+      background-color: #333;
       padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
 
     .logo-container {
@@ -47,27 +45,47 @@
       margin-right: 10px;
     }
 
+    .logo-container h1 {
+      font-size: 24px;
+      margin: 0;
+      color: white;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
     nav ul {
       display: flex;
+      justify-content: flex-start;
       list-style: none;
-      margin: 0;
       padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin-right: 15px;
     }
 
     nav ul li a {
       text-decoration: none;
-      color: black;
-      padding: 8px 12px;
+      color: white;
       font-weight: bold;
+      padding: 6px 10px;
+      border-radius: 4px;
     }
 
     nav ul li a:hover {
-      background-color: #ddd;
-      border-radius: 5px;
+      background-color: #555;
+    }
+
+    /* Зміст */
+    main {
+      padding: 20px;
     }
 
     h2 {
-      color: white;
+      color: #2c2c2c;
       text-align: center;
     }
 
@@ -78,16 +96,46 @@
       color: white;
     }
 
-    form, table {
+    table {
       background-color: rgba(0, 0, 0, 0.6);
-      padding: 15px;
+      margin: 20px auto;
+      max-width: 600px;
+      border-radius: 10px;
+    }
+
+    form {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 20px;
       margin: 20px auto;
       max-width: 600px;
       border-radius: 10px;
     }
 
     label, legend {
+      color: #333;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 6px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #333;
       color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #555;
     }
 
     footer {
@@ -104,7 +152,7 @@
   <header>
     <div class="logo-container">
       <img src="booklove.png" alt="Logo">
-      <h1 style="font-size: 24px; margin: 0;">Книжковий магазин</h1>
+      <h1>Книжковий магазин</h1>
     </div>
 
     <nav>
@@ -121,7 +169,7 @@
   <main>
     <h2>Контактна інформація</h2>
     <table>
-      <caption>Наша команда</caption>
+      <caption style="caption-side: top; color: white;">Наша команда</caption>
       <thead>
         <tr>
           <th>Відділ</th>
@@ -153,36 +201,44 @@
       <fieldset>
         <legend>Інформація користувача</legend>
 
-        <p><label>Привітання:
+        <label>Привітання:
           <select name="salutation">
             <option>--Не вибрано--</option>
             <option>Пані</option>
             <option>Пане</option>
           </select>
-        </label></p>
+        </label>
 
-        <p><label>Ім’я: <input type="text" name="firstName" required></label></p>
-        <p><label>Прізвище: <input type="text" name="lastName" required></label></p>
+        <label>Ім’я:
+          <input type="text" name="firstName" required>
+        </label>
 
-        <p>Стать:
-          <label><input type="radio" name="gender" value="male"> Чоловіча</label>
-          <label><input type="radio" name="gender" value="female"> Жіноча</label>
-        </p>
+        <label>Прізвище:
+          <input type="text" name="lastName" required>
+        </label>
 
-        <p><label>Email: <input type="email" name="email" required></label></p>
-        <p><label>Дата народження: <input type="date" name="birthDate"></label></p>
+        <label>Стать:</label>
+        <label><input type="radio" name="gender" value="male"> Чоловіча</label>
+        <label><input type="radio" name="gender" value="female"> Жіноча</label>
 
-        <p><label>Адреса:<br>
-          <textarea name="address" rows="4" cols="50">Місто, вулиця, будинок</textarea>
-        </label></p>
+        <label>Email:
+          <input type="email" name="email" required>
+        </label>
 
-        <p><label>Мови програмування:<br>
-          <input type="checkbox" name="language" value="html"> HTML<br>
-          <input type="checkbox" name="language" value="css"> CSS<br>
-          <input type="checkbox" name="language" value="js"> JavaScript
-        </label></p>
+        <label>Дата народження:
+          <input type="date" name="birthDate">
+        </label>
 
-        <p><button type="submit">Надіслати</button></p>
+        <label>Адреса:
+          <textarea name="address" rows="3" cols="40">Місто, вулиця, будинок</textarea>
+        </label>
+
+        <label>Мови програмування:</label>
+        <label><input type="checkbox" name="language" value="html"> HTML</label>
+        <label><input type="checkbox" name="language" value="css"> CSS</label>
+        <label><input type="checkbox" name="language" value="js"> JavaScript</label>
+
+        <button type="submit">Надіслати</button>
       </fieldset>
     </form>
   </main>
