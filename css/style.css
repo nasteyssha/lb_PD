@@ -50,11 +50,7 @@ nav li {
   margin: 0 15px;
 }
 
-nav a,
-nav a:link,
-nav a:visited,
-nav a:hover,
-nav a:active {
+nav a {
   color: white;
   text-decoration: none;
   font-size: 18px;
@@ -89,6 +85,9 @@ p {
   line-height: 1.6;
   text-align: justify;
   text-indent: 2em;
+  border: 2px solid #ccc;
+  padding: 10px;
+  outline: 2px dashed #999;
 }
 
 /* === Кнопки === */
@@ -100,6 +99,7 @@ p {
   border-radius: 5px;
   text-decoration: none;
   transition: background 0.3s;
+  cursor: pointer;
 }
 
 .button:hover {
@@ -122,6 +122,10 @@ p {
   width: 250px;
   text-align: center;
   box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  border: 1px solid #999;
+  border-style: groove;
+  border-width: 3px;
+  margin-bottom: 20px;
 }
 
 .book img {
@@ -156,6 +160,9 @@ form {
   align-items: flex-start;
   gap: 10px;
   margin-top: 20px;
+  border: 2px dotted #aaa;
+  padding: 20px;
+  overflow: auto;
 }
 
 label {
@@ -173,7 +180,7 @@ textarea {
   background-color: #eef;
 }
 
-input[type="submit"] {
+input[type="submit"], button {
   background-color: #4CAF50;
   color: white;
   padding: 10px 20px;
@@ -182,8 +189,42 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover, button:hover {
   background-color: #45a049;
+}
+
+/* === Таблиці === */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+  border: 1px solid #999;
+  table-layout: fixed;
+}
+
+table caption {
+  caption-side: top;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+td, th {
+  border: 1px solid #999;
+  padding: 10px;
+  text-align: left;
+  empty-cells: show;
+}
+
+/* === Списки === */
+ul.custom-list {
+  list-style-type: square;
+  list-style-position: inside;
+  padding-left: 20px;
+}
+
+ol.custom-list {
+  list-style-type: upper-roman;
+  list-style-position: outside;
 }
 
 /* === Адаптивність === */
@@ -247,4 +288,9 @@ footer {
   border-top: 1px solid #555;
   padding-top: 10px;
   font-size: 14px;
+}
+
+/* === Курсори === */
+a, button, .button, input[type="submit"] {
+  cursor: pointer;
 }
