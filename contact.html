@@ -48,6 +48,11 @@
           <td>admin@library.com</td>
         </tr>
       </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">Зв’яжіться з нами у будь-який час!</td>
+        </tr>
+      </tfoot>
     </table>
 
     <h2>Форма зворотного зв’язку</h2>
@@ -55,44 +60,38 @@
       <fieldset>
         <legend>Інформація користувача</legend>
 
-        <label>Привітання:
-          <select name="salutation">
-            <option>--Не вибрано--</option>
-            <option>Пані</option>
-            <option>Пане</option>
-          </select>
-        </label>
+        <label for="salutation">Привітання:</label>
+        <select name="salutation" id="salutation">
+          <option>--Не вибрано--</option>
+          <option>Пані</option>
+          <option>Пане</option>
+        </select>
 
-        <label>Ім’я:
-          <input type="text" name="firstName" required>
-        </label>
+        <label for="firstName">Ім’я:</label>
+        <input type="text" id="firstName" name="firstName" required>
 
-        <label>Прізвище:
-          <input type="text" name="lastName" required>
-        </label>
+        <label for="lastName">Прізвище:</label>
+        <input type="text" id="lastName" name="lastName" required>
 
         <label>Стать:</label>
         <label><input type="radio" name="gender" value="male"> Чоловіча</label>
         <label><input type="radio" name="gender" value="female"> Жіноча</label>
 
-        <label>Email:
-          <input type="email" name="email" required>
-        </label>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
 
-        <label>Дата народження:
-          <input type="date" name="birthDate">
-        </label>
+        <label for="birthDate">Дата народження:</label>
+        <input type="date" id="birthDate" name="birthDate">
 
-        <label>Адреса:
-          <textarea name="address" rows="3">Місто, вулиця, будинок</textarea>
-        </label>
+        <label for="address">Адреса:</label>
+        <textarea id="address" name="address" rows="3">Місто, вулиця, будинок</textarea>
 
         <label>Мови програмування:</label><br>
         <label><input type="checkbox" name="language" value="html"> HTML</label><br>
         <label><input type="checkbox" name="language" value="css"> CSS</label><br>
         <label><input type="checkbox" name="language" value="js"> JavaScript</label><br>
 
-        <button type="submit">Надіслати</button>
+        <input type="submit" value="Надіслати">
       </fieldset>
     </form>
   </main>
