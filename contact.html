@@ -4,148 +4,7 @@
   <meta charset="UTF-8">
   <title>Контакти</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      background-image: url("img/1.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: -1;
-      background-image: url("img/1.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      filter: blur(5px);
-    }
-
-    /* Шапка */
-    header {
-      background-color: #333;
-      padding: 10px 20px;
-    }
-
-    .logo-container {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo-container img {
-      height: 50px;
-      width: 50px;
-      margin-right: 10px;
-    }
-
-    .logo-container h1 {
-      font-size: 24px;
-      margin: 0;
-      color: white;
-    }
-
-    nav {
-      margin-top: 10px;
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: flex-start;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav ul li {
-      margin-right: 15px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      padding: 6px 10px;
-      border-radius: 4px;
-    }
-
-    nav ul li a:hover {
-      background-color: #555;
-    }
-
-    /* Основна частина */
-    main {
-      padding: 20px;
-    }
-
-    h2 {
-      color: #2c2c2c;
-      text-align: center;
-    }
-
-    table, th, td {
-      border: 1px solid white;
-      border-collapse: collapse;
-      padding: 8px;
-      color: white;
-    }
-
-    table {
-      background-color: rgba(0, 0, 0, 0.6);
-      margin: 20px auto;
-      max-width: 600px;
-      border-radius: 10px;
-    }
-
-    form {
-      background-color: rgba(255, 255, 255, 0.85);
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 600px;
-      border-radius: 10px;
-    }
-
-    label, legend {
-      color: #333;
-      font-weight: bold;
-    }
-
-    input, select, textarea {
-      width: 100%;
-      padding: 6px;
-      margin-top: 5px;
-      margin-bottom: 15px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      background-color: #333;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #555;
-    }
-
-    footer {
-      background-color: #222;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      margin-top: 40px;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -169,7 +28,7 @@
   <main>
     <h2>Контактна інформація</h2>
     <table>
-      <caption style="caption-side: top; color: white;">Наша команда</caption>
+      <caption>Наша команда</caption>
       <thead>
         <tr>
           <th>Відділ</th>
@@ -189,11 +48,6 @@
           <td>admin@library.com</td>
         </tr>
       </tbody>
-      <tfoot>
-        <tr>
-          <td colspan="3">Зв’яжіться з нами у будь-який час!</td>
-        </tr>
-      </tfoot>
     </table>
 
     <h2>Форма зворотного зв’язку</h2>
@@ -230,7 +84,7 @@
         </label>
 
         <label>Адреса:
-          <textarea name="address" rows="3" cols="40">Місто, вулиця, будинок</textarea>
+          <textarea name="address" rows="3">Місто, вулиця, будинок</textarea>
         </label>
 
         <label>Мови програмування:</label><br>
