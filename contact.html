@@ -1,187 +1,111 @@
 <!DOCTYPE html>
-<html land="ru">
+<html lang="uk">
 <head>
-	<title>Контакти</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet"  href="css/style.css">
-	<link rel="stylesheet"  href="css/footer.css">
-	
-	<style>
-     body {
-    background-image: url("img/1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    }
-
-    body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    background-image: url("img/1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    filter: blur(5px);
-    }
-      /* CSS стили для формы */
-      form {
-        display: flex;
-        flex-direction: column;
-        align-items: right;
-      }
-
-      label {
-        font-weight: bold;
-        margin-bottom: 5px;
-      }
-
-      input[type="text"],
-      input[type="email"],
-      input[type="password"],
-      textarea {
-        width: 50%;
-        padding: 10px;
-        margin-bottom: 20px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-      }
-
-      input[type="submit"] {
-        background-color: #4CAF50;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-		align-items: right;
-		width: 50%;
-      }
-
-      input[type="submit"]:hover {
-        background-color: #45a049;
-      }
-
-      /* CSS стили для сообщений об ошибках */
-      .error {
-        color: red;
-        font-size: 12px;
-        margin-top: -10px;
-        margin-bottom: 10px;
-      }
-
-	  
-
-    </style>
-	
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Контакти</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-	<header>
-		<h1>Контакти</h1>
-		<nav>
-			<ul>
-				<li><a href="index.html" class="button"> Головна</a></li>
-				<li><a href="books.html" class="button"> Книги</a></li>
-				<li><a href="about.html" class="button"> Про нас</a></li>
-				<li><a href="contact.html" class="button"> Контакти</a></li>
-				<li><a href="eSub.html" class="button"> e-Підписка</a></li>
-			</ul>
-		</nav>
-	</header>
+  <header>
+    <h1>Контакти та форма зворотного зв'язку</h1>
+  </header>
 
-	<main>
+  <main>
+    <!-- Таблиця контактів -->
+    <section>
+      <h2>Наші контакти</h2>
+      <table>
+        <caption>Контактна інформація</caption>
+        <thead>
+          <tr>
+            <th>Відділ</th>
+            <th>Ім'я</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Підтримка</td>
+            <td>Ірина</td>
+            <td>support@library.com</td>
+          </tr>
+          <tr>
+            <td>Адміністрація</td>
+            <td>Олексій</td>
+            <td>admin@library.com</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">Зв’яжіться з нами у будь-який час!</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
 
-	<form action="/submit-form" method="post">
-      <label for="name">Имя:</label>
-      <input type="text" id="name" name="name" required>
-      <span class="error" id="name-error"></span>
+    <!-- Форма зворотного зв'язку -->
+    <section>
+      <h2>Форма зворотного зв'язку</h2>
+      <form>
+        <fieldset>
+          <legend>Зв'яжіться з нами</legend>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-      <span class="error" id="email-error"></span>
+          <p>
+            <label>Привітання:
+              <select name="salutation">
+                <option>--Не вибрано--</option>
+                <option>Пані</option>
+                <option>Пане</option>
+              </select>
+            </label>
+          </p>
 
-      <label for="password">Пароль:</label>
-      <input type="password" id="password" name="password" required>
-      <span class="error" id="password-error"></span>
+          <p>
+            <label>Ім’я: <input type="text" name="firstName" required /></label>
+          </p>
 
-      <label for="message">Сообщение:</label>
-      <textarea id="message" name="message"></textarea>
+          <p>
+            <label>Прізвище: <input type="text" name="lastName" required /></label>
+          </p>
 
-      <input type="submit" value="Отправить">
-    </form>
-	
-	
-	
-    <script>
-      const form = document.querySelector('form');
-      const nameInput = document.querySelector('#name');
-      const emailInput = document.querySelector('#email');
-      const passwordInput = document.querySelector('#password');
+          <p>
+            Стать:
+            <label><input type="radio" name="gender" value="male" /> Чоловіча</label>
+            <label><input type="radio" name="gender" value="female" /> Жіноча</label>
+          </p>
 
-      form.addEventListener('submit', (event) => {
-        let errors = [];
+          <p>
+            <label>Email: <input type="email" name="email" required /></label>
+          </p>
 
-        if (nameInput.value === '') {
-          errors.push('Введите имя');
-          document.querySelector('#name-error').textContent = 'Введите имя';
-        } else {
-          document.querySelector('#name-error').textContent = '';
-        }
+          <p>
+            <label>Дата народження: <input type="date" name="birthDate" /></label>
+          </p>
 
-        if (emailInput.value === '') {
-          errors.push('Введите email');
-          document.querySelector('#email-error').textContent = 'Введите email';
-        } else {
-          document.querySelector('#email-error').textContent = '';
-        }
+          <p>
+            <label>Адреса:<br />
+              <textarea name="address" rows="4" cols="50">Місто, вулиця, будинок</textarea>
+            </label>
+          </p>
 
-        if (passwordInput.value === '') {
-          errors.push('Введите пароль');
-          document.querySelector('#password-error').textContent = 'Введите пароль';
-        } else {
-          document.querySelector('#password-error').textContent = '';
-        }
+          <p>
+            <label>Ваші улюблені мови програмування:</label><br />
+            <input type="checkbox" name="language" value="html" /> HTML<br />
+            <input type="checkbox" name="language" value="css" /> CSS<br />
+            <input type="checkbox" name="language" value="js" /> JavaScript
+          </p>
 
-        if (errors.length > 0) {
-          event.preventDefault();
-        }
-      });
-    </script>
+          <p>
+            <button type="submit">Надіслати</button>
+          </p>
+        </fieldset>
+      </form>
+    </section>
+  </main>
 
-    </main>
-
-	<footer>
-  <div class="footer-container">
-    <div class="footer-row">
-      <div class="footer-col">
-        <h3>Контакты</h3>
-        <li><strong>Адреса:</strong> вул. Ярослава Мудрого 10 </li>
-        <li><strong>Телефон:</strong> 123-456-7890</li>
-        <li><strong>Email:</strong> info@bookstore.com</li>
-      </div>
-      <div class="footer-col">
-        <h3>Про нас</h3>
-        <p>Зв'яжіться з нами, щоб дізнатись більше про наші послуги та продукти:</p>
-      </div>
-      <div class="footer-col">
-        <h3>Корисні посилання</h3>
-        <ul>
-          <li><a href="index.html">Головна</a></li>
-          <li><a href="about.html">Послуги</a></li>
-          <li><a href="books.html">Бібліотека</a></li>
-          <li><a href="contact.html">Контакты</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>©2025 nastyabook.com Всі права захищені</p>
-  </div>
-</footer>
-
+  <footer>
+    <p>&copy; 2025 Бібліотека Насті</p>
+  </footer>
 </body>
 </html>
