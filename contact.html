@@ -10,6 +10,8 @@
       background-image: url("img/1.jpg");
       background-repeat: no-repeat;
       background-size: cover;
+      margin: 0;
+      font-family: Arial, sans-serif;
     }
 
     body::before {
@@ -24,6 +26,49 @@
       background-repeat: no-repeat;
       background-size: cover;
       filter: blur(5px);
+    }
+
+    header {
+      background-color: #f0f0f0;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-container img {
+      height: 50px;
+      width: 50px;
+      margin-right: 10px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: black;
+      padding: 8px 12px;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      background-color: #ddd;
+      border-radius: 5px;
+    }
+
+    h2 {
+      color: white;
+      text-align: center;
     }
 
     table, th, td {
@@ -45,9 +90,12 @@
       color: white;
     }
 
-    h2 {
+    footer {
+      background-color: #222;
       color: white;
+      padding: 20px;
       text-align: center;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -55,16 +103,17 @@
 
   <header>
     <div class="logo-container">
-      <img src="./booklove.png" alt="Logo">
-      <h1>Книжковий магазин</h1>
+      <img src="booklove.png" alt="Logo">
+      <h1 style="font-size: 24px; margin: 0;">Книжковий магазин</h1>
     </div>
+
     <nav>
       <ul>
-        <li><a href="index.html" class="button">Головна</a></li>
-        <li><a href="books.html" class="button">Книги</a></li>
-        <li><a href="about.html" class="button">Про нас</a></li>
-        <li><a href="contact.html" class="button">Контакти</a></li>
-        <li><a href="eSub.html" class="button">e-Підписка</a></li>
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="books.html">Книги</a></li>
+        <li><a href="about.html">Про нас</a></li>
+        <li><a href="contact.html">Контакти</a></li>
+        <li><a href="eSub.html">e-Підписка</a></li>
       </ul>
     </nav>
   </header>
@@ -139,32 +188,7 @@
   </main>
 
   <footer>
-    <div class="footer-container">
-      <div class="footer-row">
-        <div class="footer-col">
-          <h3>Контакти</h3>
-          <li><strong>Адреса:</strong> вул. Ярослава Мудрого 10</li>
-          <li><strong>Телефон:</strong> 123-456-7890</li>
-          <li><strong>Email:</strong> info@bookstore.com</li>
-        </div>
-        <div class="footer-col">
-          <h3>Про нас</h3>
-          <p>Зв'яжіться з нами, щоб дізнатись більше про наші послуги та продукти:</p>
-        </div>
-        <div class="footer-col">
-          <h3>Корисні посилання</h3>
-          <ul>
-            <li><a href="index.html">Головна</a></li>
-            <li><a href="about.html">Про нас</a></li>
-            <li><a href="books.html">Книги</a></li>
-            <li><a href="contact.html">Контакти</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>©2025 nastyabook.com Всі права захищені</p>
-    </div>
+    <p>©2025 nastyabook.com — Всі права захищені</p>
   </footer>
 
 </body>
