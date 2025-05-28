@@ -1,3 +1,17 @@
+/* === Загальні налаштування === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+/* === Логотип і заголовок === */
 .logo-container {
   display: flex;
   align-items: center;
@@ -19,200 +33,232 @@
 
 .logo-container h1 {
   font-size: 32px;
-  margin: 0;
   color: #fff;
   text-shadow: 1px 1px 2px #000;
 }
 
-/* Стили для контейнера текста */
-#text-container {
-	flex-basis: 35%; /* Ширина контейнера равна 35% от родительского элемента */
-	text-align: left; /* Выравнивание текста по левому краю */
+/* === Навігація === */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+  padding: 10px;
 }
 
-/* CSS стили для формы */
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background-color: #555;
+}
+
+/* === Основний заголовок === */
+h1, h2, h3 {
+  text-align: center;
+  margin: 20px 0;
+  color: #003366;
+}
+
+h1 {
+  font-size: 36px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+h2 {
+  font-size: 28px;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  text-align: justify;
+  text-indent: 2em;
+}
+
+/* === Кнопки === */
+.button {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+/* === Книги === */
+#books {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+.book {
+  background-color: #e9ecef;
+  padding: 15px;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+.book img {
+  max-width: 100%;
+  border-radius: 5px;
+  transition: transform 0.3s;
+}
+
+.book img:hover {
+  transform: scale(1.05);
+}
+
+.book .price {
+  font-weight: bold;
+  color: #008000;
+}
+
+/* === Селектори класів і ID === */
+h2.black {
+  color: black;
+}
+
+#main-title {
+  font-size: 34px;
+  color: teal;
+}
+
+/* === Форма === */
 form {
-	display: flex; /* Устанавливает блочное отображение для формы */
-	flex-direction: column; /* Расположение элементов формы в столбец */
-	align-items: right; /* Выравнивание элементов формы по правому краю */
-	flex-basis: 75%; /* Ширина формы равна 75% от родительского элемента */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 label {
-	font-weight: bold; /* Устанавливает полужирное начертание для меток формы */
-	margin-bottom: 5px; /* Отступ снизу для меток формы */
+  font-weight: bold;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="password"],
 textarea {
-	width: 75%; /* Ширина полей ввода и текстовой области равна 75% от родительского элемента */
-	padding: 10px; /* Внутренний отступ для полей ввода и текстовой области */
-	margin-bottom: 20px; /* Отступ снизу для полей ввода и текстовой области */
-	border: 1px solid #ccc; /* Граница полей ввода и текстовой области */
-	border-radius: 4px; /* Радиус скругления углов полей ввода и текстовой области */
-	box-sizing: border-box; /* Учитывать границу и внутренний отступ в общей ширине элемента */
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
 }
 
 input[type="submit"] {
-	background-color: #4CAF50; /* Цвет фона кнопки отправки формы */
-	color: white; /* Цвет текста на кнопке отправки формы */
-	padding: 12px 20px; /* Внутренний отступ кнопки отправки формы */
-	border: none; /* Убираем границу у кнопки отправки формы */
-	border-radius: 4px; /* Радиус скругления углов кнопки отправки формы */
-	cursor: pointer; /* Изменяем курсор при наведении на кнопку отправки формы */
-	align-items: right; /* Выравнивание кнопки отправки формы по правому краю */
-	width: 50%; /* Ширина кнопки отправки формы равна 50% от родительского элемента */
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 input[type="submit"]:hover {
-	background-color: #45a049; /* Цвет фона кнопки отправки формы при наведении */
+  background-color: #45a049;
 }
 
-/* CSS стили для сообщений об ошибках */
-.error {
-	color: red; /* Цвет текста сообщений об ошибках */
-	font-size: 12px; /* Размер шрифта сообщений об ошибках */
-	margin-top: -10px; /* Отрицательный отступ сверху для сообщений об ошибках */
-	margin-bottom: 10px; /* Отступ снизу для сообщений об ошибках */
+/* === Селектори атрибутів === */
+input[type="text"] {
+  background-color: #eef;
 }
 
-/* Общие стили */
-
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: Arial, sans-serif;
+/* === Посилання === */
+a:link {
+  color: blue;
+}
+a:visited {
+  color: purple;
+}
+a:hover {
+  color: orange;
+}
+a:active {
+  color: red;
 }
 
-.scale {
-	transition: 0.5s; /* Время эффекта при наведении на элемент с классом "scale" */
-}
-
-.scale:hover {
-	transform: scale(1.2); /* Увеличение масштаба элемента при наведении */
-}
-
-body {
-	background-color: #f7f7f7; /* Цвет фона страницы */
-}
-
-header {
-	background-color: #333; /* Цвет фона заголовка */
-	color: #fff; /* Цвет текста в заголовке */
-	padding: 20px; /* Внутренний отступ заголовка */
-}
-
-h1 {
-	font-size: 36px; /* Размер шрифта заголовка первого уровня */
-	margin-bottom: 10px; /* Отступ снизу для заголовка первого уровня */
-}
-
-nav ul {
-	list-style: none; /* Убираем маркеры списка */
-	display: flex; /* Устанавливаем блочное отображение для навигационного меню */
-}
-
-nav li {
-	margin-left: 20px; /* Отступ слева для пунктов навигационного меню */
-}
-
-nav a {
-	font-size: 18px; /* Размер шрифта ссылок навигационного меню */
-	color: #fff; /* Цвет текста ссылок навигационного меню */
-	text-decoration: none; /* Убираем подчеркивание ссылок навигационного меню */
-}
-
-main {
-	max-width: 1200px; /* Максимальная ширина основного контейнера */
-	margin: 0 auto; /* Центрирование основного контейнера по горизонтали */
-	padding: 50px; /* Внутренний отступ основного контейнера */
-}
-
-section {
-	margin-bottom: 50px; /* Отступ снизу для секций */
-}
-
-article {
-	background-color: #DCDCDC; /* Цвет фона статей */
-	border-radius: 10px; /* Радиус скругления углов статей */
-}
-
-h2 {
-	font-size: 28px; /* Размер шрифта заголовка второго уровня */
-	margin-bottom: 20px; /* Отступ снизу для заголовка второго уровня */
-}
-
-p {
-	font-size: 20px; /* Размер шрифта абзацев */
-	line-height: 1.5; /* Межстрочный интервал абзацев */
-	margin-bottom: 20px; /* Отступ снизу для абзацев */
-}
-
-.button {
-	display: inline-block; /* Отображение кнопки в виде строчного элемента */
-	background-color: #333; /* Цвет фона кнопки */
-	color: #fff; /* Цвет текста на кнопке */
-	padding: 10px 20px; /* Внутренний отступ кнопки */
-	border-radius: 5px; /* Радиус скругления углов кнопки */
-	text-decoration: none; /* Убираем подчеркивание текста кнопки */
-}
-
-.button:hover {
-	background-color: #555; /* Цвет фона кнопки при наведении */
-}
-
-/* Стили для книг */
-
-#books {
-	display: flex; /* Устанавливаем блочное отображение для контейнера книг */
-	flex-wrap: wrap; /* Обертка элементов книг */
-}
-
-.book {
-	flex-basis: calc(33.33% - 20px); /* Ширина каждой книги равна примерно 33.33% от родительского контейнера, с учетом отступов */
-	margin-right: 20px; /* Отступ справа для каждой книги */
-	margin-bottom: 20px; /* Отступ снизу для каждой книги */
-}
-
-.book img {
-	max-width: 100%; /* Максимальная ширина изображения книги */
-}
-
-.book h3 {
-	font-size: 24px; /* Размер шрифта заголовка книги */
-	margin-top: 10px; /* Отступ сверху для заголовка книги */
-	margin-bottom: 5px; /* Отступ снизу для заголовка книги */
-}
-
-.book p {
-	font-size: 16px; /* Размер шрифта текста книги */
-	margin-bottom: 10px; /* Отступ снизу для текста книги */
-}
-
-.book .price {
-	font-weight: bold; /* Устанавливает полужирное начертание для цены книги */
-}
-
+/* === Адаптивність === */
 @media screen and (max-width: 768px) {
-	/* Стили для маленьких экранов (ширина до 768px) */
-	nav {
-		margin-top: 20px; /* Отступ сверху для навигационного меню на маленьких экранах */
-	}
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
 
-	nav ul {
-		flex-direction: column; /* Расположение пунктов навигационного меню в столбец на маленьких экранах */
-	}
+  .book {
+    width: 90%;
+  }
+}
 
-	nav li {
-		margin-left: 0; /* Убираем отступ слева для пунктов навигационного меню на маленьких экранах */
-		margin-bottom: 10px; /* Отступ снизу для пунктов навигационного меню на маленьких экранах */
-	}
+/* === Футер === */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 30px;
+  margin-top: 30px;
+}
 
-	.book {
-		flex-basis: 100%; /* Ширина книги на маленьких экранах равна 100% */
-		margin-right: 0; /* Убираем отступ справа для книг на маленьких экранах */
-	}
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-col h3 {
+  margin-bottom: 15px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #555;
+  padding-top: 10px;
+  font-size: 14px;
 }
