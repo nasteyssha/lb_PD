@@ -50,8 +50,12 @@ nav li {
   margin: 0 15px;
 }
 
-nav a {
-  color: #fff;
+nav a,
+nav a:link,
+nav a:visited,
+nav a:hover,
+nav a:active {
+  color: white;
   text-decoration: none;
   font-size: 18px;
   padding: 8px 12px;
@@ -63,7 +67,7 @@ nav a:hover {
   background-color: #555;
 }
 
-/* === Основний заголовок === */
+/* === Заголовки і текст === */
 h1, h2, h3 {
   text-align: center;
   margin: 20px 0;
@@ -166,6 +170,7 @@ textarea {
   padding: 10px;
   border: 1px solid #aaa;
   border-radius: 4px;
+  background-color: #eef;
 }
 
 input[type="submit"] {
@@ -179,25 +184,6 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: #45a049;
-}
-
-/* === Селектори атрибутів === */
-input[type="text"] {
-  background-color: #eef;
-}
-
-/* === Посилання === */
-a:link {
-  color: blue;
-}
-a:visited {
-  color: purple;
-}
-a:hover {
-  color: orange;
-}
-a:active {
-  color: red;
 }
 
 /* === Адаптивність === */
