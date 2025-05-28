@@ -163,6 +163,8 @@ form {
   border: 2px dotted #aaa;
   padding: 20px;
   overflow: auto;
+  background-color: #fff;
+  border-radius: 8px;
 }
 
 label {
@@ -172,7 +174,8 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="password"],
-textarea {
+textarea,
+select {
   width: 100%;
   padding: 10px;
   border: 1px solid #aaa;
@@ -213,6 +216,7 @@ td, th {
   padding: 10px;
   text-align: left;
   empty-cells: show;
+  background-color: #fdfdfd;
 }
 
 /* === Списки === */
